@@ -64,6 +64,40 @@ unittestresults: unittestresults dominion.o rngs.o
 	gcov dominion.c -b >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
+
+randomBaron: randTestBaron.c dominion.o rngs.o
+	gcc -o randTestBaron -g -lm dominion.c rngs.c randTestBaron.c $(CFLAGS)
+	randTestBaron >> baronTest.out
+	gcov -b dominion.c >> baronTest.out
+	#cat dominion.c.gcov >> baronTest.out	
+
+randomMinion: randTestMinion.c dominion.o rngs.o
+	gcc -o randTestMin -g -lm dominion.c rngs.c randTestMinion.c $(CFLAGS)
+	randTestMin >> minionTest.out
+	gcov -b dominion.c >> minionTest.out
+	#cat dominion.c.gcov >> minionTest.out	
+
+randomTribute: randTestTribute.c dominion.o rngs.o
+	gcc -o randTestTribute -g -lm dominion.c rngs.c randTestTribute.c $(CFLAGS)
+	randTestTribute >> tributeTest.out
+	gcov -b dominion.c >> tributeTest.out
+	#cat dominion.c.gcov >> tributeTest.out	
+
+
+
+randomTestOut: randomTestOut dominion.o rngs.o
+	gcc -o randTestBaron -g -lm dominion.c rngs.c randTestBaron.c $(CFLAGS)
+	randTestBaron >> baronTest.out
+	gcov -b dominion.c >> baronTest.out
+	gcc -o randTestMin -g -lm dominion.c rngs.c randTestMinion.c $(CFLAGS)
+	randTestMin >> minionTest.out
+	gcov -b dominion.c >> minionTest.out
+	gcc -o randTestTribute -g -lm dominion.c rngs.c randTestTribute.c $(CFLAGS)
+	randTestTribute >> tributeTest.out
+	gcov -b dominion.c >> tributeTest.out
+	gcov dominion.c -b >> randomresults.out
+	cat dominion.c.gcov >> randomresults.out
+
 all: playdom player
 
 #unittestresults:
