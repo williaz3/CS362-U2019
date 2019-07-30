@@ -74,6 +74,7 @@ int addEstate = 0;
 addEstate = rand() % 2;
 if (addEstate == 1){
 G.hand[0][0]= estate;
+//G.handCount[0] = G.handCount[0] + 1;
 }
 
 if (addEstate == 1){
