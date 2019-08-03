@@ -78,8 +78,9 @@ handBefore2 = G.handCount[1];
 discardBefore2 = G.discardCount[1];
 
 //printf("player two: deck: %d, hand %d\n", G.deckCount[1], G.handCount[1]);
+//int whTurn = whoseTurn(&G);
+//printf("whose turn: %d\n", whTurn);
 
-/*
 printf("pre-minion\n");
 printf("actions1: %d\n", G.numActions);
 printf("coins1: %d\n", G.coins);
@@ -88,10 +89,10 @@ printf("handsize1: %d\n", G.handCount[0]);
 printf("\n");
 printf("discarded2: %d\n", G.discardCount[1]);
 printf("handsize2: %d\n", G.handCount[1]);
-*/
+
 cardEffect(minion, choice1, choice2, choice3, &G, handPos, &bonus);
-//printf("player one: deck: %d, hand %d\n", G.deckCount[0], G.handCount[0]);
-//printf("player two: deck: %d, hand %d\n", G.deckCount[1], G.handCount[1]);
+printf("player one: deck: %d, hand %d\n", G.deckCount[0], G.handCount[0]);
+printf("player two: deck: %d, hand %d\n", G.deckCount[1], G.handCount[1]);
 
 coinsAfter1 = G.coins;
 discardAfter1 = G.discardCount[0];
@@ -111,7 +112,7 @@ printf("Player2 has 5 or more cards in hand, should equal 4 after minion resolve
 
 
 
-/*
+
 printf("after minion1: \n");
 printf("actions1: %d\n", G.numActions);
 printf("coins1: %d\n", G.coins);
@@ -121,7 +122,7 @@ printf("\n");
 printf("discarded2: %d\n", G.discardCount[1]);
 printf("handsize2: %d\n", G.handCount[1]);
 printf("-----------------------------------");
-*/
+
 
 
 /*
@@ -149,16 +150,16 @@ if (choice1 ==1){
 	}
 
 	if(handBefore1 != handAfter1){
-	printf("hand error: player 1: expected %d actual: %d\n", handBefore1, handAfter1);
+	printf("hand error1: player 1: expected %d actual: %d\n", handBefore1, handAfter1);
 	handFailure++;
 	}
 
 	if(deckBefore2 != deckAfter2){
-	printf("Deck Error: expected: %d actual: %d\n", deckBefore2, deckAfter2);
+	printf("Deck Error2: expected: %d actual: %d\n", deckBefore2, deckAfter2);
 	deckFailure++;
 	}
 	if(handBefore2 != handAfter2){
-	printf("hand error: player 2: expected %d actual: %d\n", handBefore2, handAfter2);
+	printf("hand error2: player 2: expected %d actual: %d\n", handBefore2, handAfter2);
 	handFailure++;
 	}
 

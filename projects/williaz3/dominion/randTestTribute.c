@@ -131,8 +131,8 @@ printf("#victory cards %d, #treasure cards %d, # action cards: %d\n", victory[i]
 
 //printf("player two: deck: %d, hand %d\n", G.deckCount[1], G.handCount[1]);
 
-/*
-printf("pre-minion\n");
+
+printf("pre-tribute\n");
 printf("actions1: %d\n", G.numActions);
 printf("coins1: %d\n", G.coins);
 printf("discarded1: %d\n", G.discardCount[0]);
@@ -140,10 +140,10 @@ printf("handsize1: %d\n", G.handCount[0]);
 printf("\n");
 printf("discarded2: %d\n", G.discardCount[1]);
 printf("handsize2: %d\n", G.handCount[1]);
-*/
+
 cardEffect(tribute, choice1, choice2, choice3, &G, handPos, &bonus);
-//printf("player one: deck: %d, hand %d\n", G.deckCount[0], G.handCount[0]);
-//printf("player two: deck: %d, hand %d\n", G.deckCount[1], G.handCount[1]);
+printf("player one: deck: %d, hand %d\n", G.deckCount[0], G.handCount[0]);
+printf("player two: deck: %d, hand %d\n", G.deckCount[1], G.handCount[1]);
 
 coinsAfter1 = G.coins;
 discardAfter1 = G.discardCount[0];
@@ -155,7 +155,7 @@ discardAfter2 = G.discardCount[1];
 handAfter2= G.handCount[1];
 deckAfter2 = G.deckCount[1];
 
-/*
+
 printf("after minion1: \n");
 printf("actions1: %d\n", G.numActions);
 printf("coins1: %d\n", G.coins);
@@ -165,7 +165,7 @@ printf("\n");
 printf("discarded2: %d\n", G.discardCount[1]);
 printf("handsize2: %d\n", G.handCount[1]);
 printf("-----------------------------------\n");
-*/
+
 
 
 

@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 int main(){
-int TESTCASE = 10;
+int TESTCASE =50;
 int i, j;
 int seed = 1000;
 int numPlayer= 2;
@@ -16,7 +16,8 @@ int numPlayer= 2;
 int k[10] ={ adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
 struct gameState G;
 
-int deckSize, handSize, discardCount, handPos, bonus, choice1, choice2,choice3 = 0;
+int deckSize, handSize, discardCount, handPos, bonus,  choice2,choice3 = 0;
+int choice1 = 1;
 int actionsBefore1, actionsAfter1, estateError, estateCount, buysBefore1, buysAfter1, deckBefore1, deckAfter1, handBefore1, handAfter1, discardBefore1, discardAfter1, coinsBefore1, coinsAfter1;
 
 //int passed;
@@ -86,14 +87,13 @@ printf("no estate in hand, hand should increase by one and # estates should be o
 
 
 
-printf("pre-minion\n");
+printf("pre-Baron\n");
 printf("player one: deck: %d, hand %d\n", G.deckCount[0], G.handCount[0]);
 printf("actions1: %d\n", G.numActions);
 printf("coins1: %d\n", G.coins);
 printf("discarded1: %d\n", G.discardCount[0]);
 printf("handsize1: %d\n", G.handCount[0]);
 printf("\n");
-
 cardEffect(baron, choice1, choice2, choice3, &G, handPos, &bonus);
 
 buysAfter1 = G.numBuys;
@@ -104,7 +104,7 @@ handAfter1= G.handCount[0];
 deckAfter1 = G.deckCount[0];
 
 
-printf("after minion1: \n");
+printf("after Baron: \n");
 printf("actions1: %d\n", G.numActions);
 printf("coins1: %d\n", G.coins);
 printf("discarded1: %d\n", G.discardCount[0]);
@@ -116,11 +116,9 @@ printf("-----------------------------------\n");
 
 /*
 deckFailure, handFailure, discardFail, testPassed, totError = 0;
-
-printf("Choice1: gain2 coins, Choice 2: draw 4, other players with 4 or more cards discard adn draw 4\n");
-p
-
 */
+printf("+1 Buy, if estate in hand discard and gain four coins, if no estate in hand draw an estate\n");
+
 
 if (addEstate == 1){
 	if(buysAfter1 != buysBefore1 +1){

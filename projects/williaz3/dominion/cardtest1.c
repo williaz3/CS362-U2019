@@ -10,7 +10,7 @@
 
 int main(){
 
-int i;
+int i, j;
 int seed = 1000;
 int numPlayer = 2; 
 int maxBonus = 10;
@@ -46,6 +46,8 @@ for (p = 0; p < numPlayer; p++)
 		
 	
 		 r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+		j = whoseTurn(&G);
+		printf("whose turn: %d\n", j);
 		}
 	}
 }
