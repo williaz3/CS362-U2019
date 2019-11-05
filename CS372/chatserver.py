@@ -19,7 +19,6 @@ def startup():
 	serverport = int(sys.argv[1])
 	host = gethostname()
 	ip = gethostbyname(host)
-	print(host)
 	serverSocket = socket(AF_INET,SOCK_STREAM)
 	serverSocket.bind(('',serverport))
 	serverSocket.listen(1)
@@ -36,10 +35,10 @@ def receiveMessage(server):
 	print("SERVER RECEIVED: " + sentence)
 	endString = '/quit'
 	if sentence == endString:
-		print("Client Requested End")
+		print("SERVER: Client Requested End")
 
 	if sentence == "":
-		print("no blank strings please")
+		print("SERVER: no blank strings please")
 		errorCount = errorCount +1
 		if errorCount >= 5:
 			return	
