@@ -103,6 +103,8 @@ return dp;
 /* list the contents of the directory
  *pre=params: none
  *post-params: none
+*
+*based around www.tutorialspoint.com/How-can-I-get-the-list-of-files-in-a-directory-using-C-Cplusplus/
  * */
 void listOutput(){
 DIR * dir = opendir("./");
